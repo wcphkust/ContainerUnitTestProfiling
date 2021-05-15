@@ -1,0 +1,191 @@
+package list;
+
+import java.lang.System;
+import java.util.ArrayList;
+import java.util.Stack;
+import java.util.HashMap;
+
+public class $DS$TestSuite {
+    public int size;
+    public int multiplicity;
+    public HashMap<String, Integer> $DS$Profile;
+
+    public $DS$TestSuite(int p_size, int p_multiplicity) {
+        this.size = p_size;
+        this.multiplicity = p_multiplicity;
+        this.$DS$Profile = new HashMap<>();
+    }
+
+    public void insertAtHead_$insertAtHead_ID$() {
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < this.multiplicity; i++) {
+            $DS$<Integer> $DS$_object = new $DS$<Integer>();
+            for (int j = 0; j < this.size; j++) {
+                $DS$_object.$insertAtHead$(j);
+            }
+        }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        this.$DS$Profile.put("$insertAtHead$(O)", new Integer((int)totalTime));
+    }
+
+    public void insertAtEnd_$insertAtEnd_ID$() {
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < this.multiplicity; i++) {
+            $DS$<Integer> $DS$_object = new $DS$<Integer>();
+            for (int j = 0; j < this.size; j++) {
+                $DS$_object.$insertAtEnd$(j);
+            }
+        }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        this.$DS$Profile.put("$insertAtEnd$(O)", new Integer((int)totalTime));
+    }
+
+    public void insertRandom_$insertRandom_ID$() {
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < this.multiplicity; i++) {
+            $DS$<Integer> $DS$_object = new $DS$<Integer>();
+            for (int j = 0; j < this.size; j++) {
+                $DS$_object.$insertRandom$(j/2, j);
+            }
+        }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        this.$DS$Profile.put("$insertRandom$(I, O)", new Integer((int)totalTime));
+    }
+
+    public void deleteAtHead_$deleteAtHead_ID$() {
+        ArrayList<$DS$<Integer>> $DS$_objects = new ArrayList<$DS$<Integer>>();
+        for (int i = 0; i < this.multiplicity; i++) {
+            $DS$<Integer> $DS$_object = new $DS$<>();
+            for (int j = 0; j < this.size; j++) {
+                $DS$.$insertAtEnd$(j);
+            }
+            $DS$_objects.add($DS$_object);
+        }
+
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < this.multiplicity; i++) {
+            $DS$ $DS$_object = $DS$_objects.get(i);
+            while(!$DS$_object.isEmpty()) {
+                $DS$_object.$deleteAtHead$();
+            }
+        }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        this.$DS$Profile.put("$deleteAtHead$()", new Integer((int)totalTime));
+    }
+
+    public void deleteAtEnd_$deleteAtEnd_ID$() {
+        ArrayList<$DS$<Integer>> $DS$_objects = new ArrayList<$DS$<Integer>>();
+        for (int i = 0; i < this.multiplicity; i++) {
+            $DS$<Integer> $DS$_object = new $DS$<>();
+            for (int j = 0; j < this.size; j++) {
+                $DS$.$insertAtEnd$(j);
+            }
+            $DS$_objects.add($DS$_object);
+        }
+
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < this.multiplicity; i++) {
+            $DS$ $DS$_object = $DS$_objects.get(i);
+            while(!$DS$_object.isEmpty()) {
+                $DS$_object.$deleteAtEnd$();
+            }
+        }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        this.$DS$Profile.put("$deleteAtEnd$()", new Integer((int)totalTime));
+    }
+
+    public void deleteRandom_$deleteRandom_ID$() {
+        ArrayList<$DS$<Integer>> $DS$_objects = new ArrayList<$DS$<Integer>>();
+        for (int i = 0; i < this.multiplicity; i++) {
+            $DS$<Integer> $DS$_object = new $DS$<>();
+            for (int j = 0; j < this.size; j++) {
+                $DS$.$insertAtEnd$(j);
+            }
+            $DS$_objects.add($DS$_object);
+        }
+
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < this.multiplicity; i++) {
+            $DS$ $DS$_object = $DS$_objects.get(i);
+            while(!$DS$_object.isEmpty()) {
+                $DS$_object.$deleteRandom$($DS$_object.size() / 2);
+            }
+        }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        this.$DS$Profile.put("$deleteRandom$()", new Integer((int)totalTime));
+    }
+
+    public void accessAtHead_$accessAtHead_ID$() {
+        $DS$<Integer> $DS$_object = new $DS$<Integer>();
+        for (int j = 0; j < this.size; j++) {
+            $DS$_object.$insertAtEnd$(j);
+        }
+
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < this.multiplicity; i++) {
+            for (int j = 0; j < this.size; j++) {
+                Integer elem = $DS$_object.$accessAtHead$();
+            }
+        }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        this.StackProfile.put("$accessAtHead$()", new Integer((int)totalTime));
+    }
+
+    public void accessAtEnd_$accessAtEnd_ID$() {
+        $DS$<Integer> $DS$_object = new $DS$<Integer>();
+        for (int j = 0; j < this.size; j++) {
+            $DS$_object.$insertAtEnd$(j);
+        }
+
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < this.multiplicity; i++) {
+            for (int j = 0; j < this.size; j++) {
+                Integer elem = $DS$_object.$accessAtEnd$();
+            }
+        }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        this.StackProfile.put("accessAtEnd()", new Integer((int)totalTime));
+    }
+
+    public void accessRandom_$accessRandom_ID$() {
+        $DS$<Integer> $DS$_object = new $DS$<Integer>();
+        for (int j = 0; j < this.size; j++) {
+            $DS$_object.$insertAtEnd$(j);
+        }
+
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < this.multiplicity; i++) {
+            for (int j = 0; j < this.size; j++) {
+                Integer elem = $DS$_object.$accessRandom$(j);
+            }
+        }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        this.StackProfile.put("$accessRandom$()", new Integer((int)totalTime));
+    }
+
+    public void search_$search_ID$() {
+        $DS$<Integer> $DS$_object = new $DS$<Integer>();
+        for (int j = 0; j < this.size; j++) {
+            $DS$_object.$insertAtEnd$(j);
+        }
+
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < this.multiplicity; i++) {
+            for (int j = 0; j < this.size; j++) {
+                $DS$_object.$search$(j);
+            }
+        }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        this.StackProfile.put("$search$(O)", new Integer((int)totalTime));
+    }
+}
